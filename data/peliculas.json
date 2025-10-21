@@ -1,0 +1,387 @@
+[
+  {
+    "titulo": "Misión Imposible",
+    "tipo": "pelicula",
+    "genero": "accion",
+    "año": 1996,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "John Wick 4",
+    "tipo": "pelicula",
+    "genero": "accion",
+    "año": 2023,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "La La Land",
+    "tipo": "pelicula",
+    "genero": "comedia",
+    "año": 2016,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "El Poder del Perro",
+    "tipo": "pelicula",
+    "genero": "drama",
+    "año": 2021,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Interestelar",
+    "tipo": "pelicula",
+    "genero": "ciencia ficcion",
+    "año": 2014,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "IT",
+    "tipo": "pelicula",
+    "genero": "terror",
+    "año": 2017,
+    "estado_animo": "valiente"
+  },
+  {
+    "titulo": "Stranger Things",
+    "tipo": "serie",
+    "genero": "ciencia ficcion",
+    "año": 2016,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Breaking Bad",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2008,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "The Office",
+    "tipo": "serie",
+    "genero": "comedia",
+    "año": 2005,
+    "estado_animo": "feliz"
+  },
+  {
+    "titulo": "Avengers: Endgame",
+    "tipo": "pelicula",
+    "genero": "accion",
+    "año": 2019,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "Oppenheimer",
+    "tipo": "pelicula",
+    "genero": "drama",
+    "año": 2023,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Spider-Man: Cruzando el Multiverso",
+    "tipo": "pelicula",
+    "genero": "accion",
+    "año": 2023,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "Pobres Criaturas",
+    "tipo": "pelicula",
+    "genero": "drama",
+    "año": 2023,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "La sociedad de la nieve",
+    "tipo": "pelicula",
+    "genero": "drama",
+    "año": 2023,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Radical",
+    "tipo": "pelicula",
+    "genero": "drama",
+    "año": 2023,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "John Wick 4",
+    "tipo": "pelicula",
+    "genero": "accion",
+    "año": 2023,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "La La Land",
+    "tipo": "pelicula",
+    "genero": "comedia",
+    "año": 2016,
+    "estado_animo": "feliz"
+  },
+  {
+    "titulo": "El Poder del Perro",
+    "tipo": "pelicula",
+    "genero": "drama",
+    "año": 2021,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Interestelar",
+    "tipo": "pelicula",
+    "genero": "ciencia ficcion",
+    "año": 2014,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "IT",
+    "tipo": "pelicula",
+    "genero": "terror",
+    "año": 2017,
+    "estado_animo": "valiente"
+  },
+  {
+    "titulo": "Stranger Things",
+    "tipo": "serie",
+    "genero": "ciencia ficcion",
+    "año": 2016,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Breaking Bad",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2008,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "The Office",
+    "tipo": "serie",
+    "genero": "comedia",
+    "año": 2005,
+    "estado_animo": "feliz"
+  },
+  {
+    "titulo": "Avengers: Endgame",
+    "tipo": "pelicula",
+    "genero": "accion",
+    "año": 2019,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "La Casa del Dragón",
+    "tipo": "serie",
+    "genero": "fantasia",
+    "año": 2022,
+    "estado_animo": "emocionado"
+  },
+  {
+    "titulo": "Miércoles",
+    "tipo": "serie",
+    "genero": "fantasia",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "El Pacificador",
+    "tipo": "serie",
+    "genero": "accion",
+    "año": 2022,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "Halo",
+    "tipo": "serie",
+    "genero": "ciencia ficcion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Caballero Luna",
+    "tipo": "serie",
+    "genero": "accion",
+    "año": 2022,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "El Señor de los Anillos: Los Anillos de Poder",
+    "tipo": "serie",
+    "genero": "fantasia",
+    "año": 2022,
+    "estado_animo": "emocionado"
+  },
+  {
+    "titulo": "Monstruo: La historia de Jeffrey Dahmer",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Reacher",
+    "tipo": "serie",
+    "genero": "accion",
+    "año": 2022,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "Tulsa King",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "La oferta",
+    "tipo": "miniserie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Separación",
+    "tipo": "serie",
+    "genero": "ciencia ficcion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Chainsaw Man",
+    "tipo": "serie",
+    "genero": "accion",
+    "año": 2022,
+    "estado_animo": "motivado"
+  },
+  {
+    "titulo": "Tiempo de victoria: La dinastía de Los Lakers",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Mob Psycho 100 III",
+    "tipo": "serie",
+    "genero": "animacion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "El encargado",
+    "tipo": "serie",
+    "genero": "comedia",
+    "año": 2022,
+    "estado_animo": "feliz"
+  },
+  {
+    "titulo": "Pachinko",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Veinticinco, veintiuno",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Bocchi the Rock!",
+    "tipo": "serie",
+    "genero": "animacion",
+    "año": 2022,
+    "estado_animo": "feliz"
+  },
+  {
+    "titulo": "Cyberpunk: Edgerunners",
+    "tipo": "miniserie",
+    "genero": "animacion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Andor",
+    "tipo": "serie",
+    "genero": "ciencia ficcion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Stranger Things 4",
+    "tipo": "serie",
+    "genero": "ciencia ficcion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Pantheon",
+    "tipo": "serie",
+    "genero": "animacion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "La Casa del Dragón",
+    "tipo": "serie",
+    "genero": "fantasia",
+    "año": 2022,
+    "estado_animo": "emocionado"
+  },
+  {
+    "titulo": "The White Lotus 2",
+    "tipo": "miniserie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Heartstopper",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "feliz"
+  },
+  {
+    "titulo": "Alquimia de almas",
+    "tipo": "serie",
+    "genero": "fantasia",
+    "año": 2022,
+    "estado_animo": "emocionado"
+  },
+  {
+    "titulo": "Made in Abyss: La ciudad dorada del sol abrasador",
+    "tipo": "serie",
+    "genero": "animacion",
+    "año": 2022,
+    "estado_animo": "curioso"
+  },
+  {
+    "titulo": "Borgen: Reino, poder y gloria",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "The Bear",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Slow Horses",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  },
+  {
+    "titulo": "Esto te va a doler",
+    "tipo": "serie",
+    "genero": "drama",
+    "año": 2022,
+    "estado_animo": "pensativo"
+  }
+]

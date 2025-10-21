@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Agente IA Recomendador</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+    }
+    .chat-bubble {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      margin: 10px;
+      line-height: 1.5;
+    }
+    .user { background: #2563eb; align-self: flex-end; }
+    .bot { background: #1e293b; align-self: flex-start; }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-2xl bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col">
+    <h1 class="text-2xl font-bold text-center mb-4">🎬 Bienvenido al Agente IA Recomendador 🎬</h1>
+
+    <div id="chat" class="flex flex-col h-96 overflow-y-auto bg-gray-800 p-4 rounded-lg mb-4"></div>
+
+    <form id="formulario" class="flex flex-col space-y-2">
+      <select id="tipo" class="p-2 rounded bg-gray-700 text-white">
+        <option value="">Selecciona tipo</option>
+        <option value="pelicula">Película</option>
+        <option value="serie">Serie</option>
+      </select>
+
+      <select id="genero" class="p-2 rounded bg-gray-700 text-white">
+        <option value="">Selecciona género</option>
+      </select>
+
+      <select id="estado_animo" class="p-2 rounded bg-gray-700 text-white">
+        <option value="">Selecciona estado de ánimo</option>
+        <option value="feliz">Feliz</option>
+        <option value="aburrido">Aburrido</option>
+        <option value="motivado">Motivado</option>
+        <option value="pensativo">Pensativo</option>
+        <option value="valiente">Valiente</option>
+        <option value="curioso">Curioso</option>
+      </select>
+
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 p-2 rounded text-white font-semibold">
+        Obtener recomendación 🎥
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("formulario");
+    const chat = document.getElementById("chat");
+    const tipoSelect = document.getElementById("tipo");
+    const generoSelect = document.getElementById("genero");
+
+    const generos = {
+      pelicula: ["accion", "comedia", "drama", "romance", "terror", "ciencia ficcion"],
+      serie: ["drama", "comedia", "romance", "ciencia ficcion", "aventura"]
+    };
+
+    tipoSelect.addEventListener("change", () => {
+      generoSelect.innerHTML = "<option value=''>Selecciona género</option>";
+      const opciones = generos[tipoSelect.value] || [];
+      opciones.forEach(g => {
+        const opt = document.createElement("option");
+        opt.value = g;
+        opt.textContent = g.charAt(0).toUpperCase() + g.slice(1);
+        generoSelect.appendChild(opt);
+      });
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const datos = {
+        tipo: tipoSelect.value,
+        genero: generoSelect.value,
+        estado_animo: document.getElementById("estado_animo").value
+      };
+
+      chat.innerHTML += `<div class='chat-bubble user'>🎤 Usuario: Quiero una ${datos.tipo} de ${datos.genero} cuando estoy ${datos.estado_animo}</div>`;
+
+      const res = await fetch("/recomendar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(datos)
+      });
+
+      const data = await res.json();
+
+      let respuesta = `<div class='chat-bubble bot'>🎬✨ Aquí tienes recomendaciones para ver el día de hoy ✨🎬<ul>`;
+      data.peliculas.forEach(p => {
+        respuesta += `<li>🍿 <b>${p.titulo}</b> (${p.tipo} - ${p.genero} - ${p.año})</li>`;
+      });
+      respuesta += "</ul></div>";
+
+      chat.innerHTML += respuesta;
+      chat.scrollTop = chat.scrollHeight;
+    });
+  </script>
+
+</body>
+</html>
