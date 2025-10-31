@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from logic.recomendador import recomendar
 
-# Diccionarios de estilos
+
 colores_genero = {
     "accion": "#FF6347",
     "comedia": "#FFD700",
@@ -23,7 +23,7 @@ emojis_estado = {
     "emocionado": "🤩"
 }
 
-# Función para procesar la recomendación
+
 def obtener_recomendaciones():
     tipo = tipo_var.get().lower()
     genero = genero_var.get().lower()
@@ -33,7 +33,7 @@ def obtener_recomendaciones():
 
     resultados = recomendar(tipo=tipo, genero=genero, año=anio, estado_animo=estado_animo, cantidad=200)
 
-    # Ordenar por popularidad (descendente)
+    
     resultados.sort(key=lambda x: x.get("popularidad", 0), reverse=True)
 
     resultados_texto.config(state="normal")
@@ -52,7 +52,7 @@ def obtener_recomendaciones():
 
     resultados_texto.config(state="disabled")
 
-# Función para reiniciar filtros
+
 def reiniciar_filtros():
     tipo_var.set("")
     genero_var.set("")
@@ -62,18 +62,18 @@ def reiniciar_filtros():
     resultados_texto.delete(1.0, tk.END)
     resultados_texto.config(state="disabled")
 
-# Crear ventana principal
+
 ventana = tk.Tk()
 ventana.title("Agente de IA Recomendador de Películas y Series")
 ventana.geometry("700x500")
 ventana.resizable(False, False)
 
-# Variables para los inputs
+
 tipo_var = tk.StringVar()
 genero_var = tk.StringVar()
 estado_var = tk.StringVar()
 
-# Etiquetas y comboboxes
+
 tk.Label(ventana, text="Tipo:").pack(pady=5)
 tipo_combo = ttk.Combobox(ventana, textvariable=tipo_var, state="readonly")
 tipo_combo['values'] = ("Pelicula", "Serie")
@@ -93,11 +93,11 @@ tk.Label(ventana, text="Año mínimo (opcional):").pack(pady=5)
 anio_entry = tk.Entry(ventana)
 anio_entry.pack()
 
-# Botones de acción
+
 tk.Button(ventana, text="Obtener Recomendaciones", command=obtener_recomendaciones).pack(pady=5)
 tk.Button(ventana, text="Reiniciar Filtros", command=reiniciar_filtros).pack(pady=5)
 
-# Marco para cuadro de texto con scroll
+
 frame_texto = tk.Frame(ventana)
 frame_texto.pack(pady=10, fill="both", expand=True)
 
@@ -109,5 +109,5 @@ resultados_texto.pack(side="left", fill="both", expand=True)
 
 scrollbar.config(command=resultados_texto.yview)
 
-# Iniciar la ventana
+
 ventana.mainloop()

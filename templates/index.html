@@ -21,41 +21,92 @@
     .bot { background: #1e293b; align-self: flex-start; }
   </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen">
+<body class="flex items-center justify-center min-h-screen">
 
-  <div class="w-full max-w-2xl bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col">
-    <h1 class="text-2xl font-bold text-center mb-4">🎬 Bienvenido al Agente IA Recomendador 🎬</h1>
+  <div class="grid grid-cols-2 gap-4 w-11/12 max-w-6xl">
+    <!-- 🧠 Chat libre profesional -->
+    <div class="bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col">
+      <h1 class="text-2xl font-bold text-center mb-4">💬 Chat con el Asistente IA</h1>
 
-    <div id="chat" class="flex flex-col h-96 overflow-y-auto bg-gray-800 p-4 rounded-lg mb-4"></div>
+      <div id="chat-libre" class="flex flex-col h-96 overflow-y-auto bg-gray-800 p-4 rounded-lg mb-4"></div>
 
-    <form id="formulario" class="flex flex-col space-y-2">
-      <select id="tipo" class="p-2 rounded bg-gray-700 text-white">
-        <option value="">Selecciona tipo</option>
-        <option value="pelicula">Película</option>
-        <option value="serie">Serie</option>
-      </select>
+      <div class="flex">
+        <input id="mensaje" type="text" placeholder="Escribe tu mensaje aquí..."
+          class="flex-grow p-2 rounded-l bg-gray-700 text-white">
+        <button id="enviar" class="bg-blue-600 hover:bg-blue-700 p-2 rounded-r font-semibold">Enviar</button>
+      </div>
+    </div>
 
-      <select id="genero" class="p-2 rounded bg-gray-700 text-white">
-        <option value="">Selecciona género</option>
-      </select>
+    <!-- 🎬 Sistema de recomendaciones -->
+    <div class="bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col">
+      <h1 class="text-2xl font-bold text-center mb-4">🎬 Agente Recomendador 🎬</h1>
 
-      <select id="estado_animo" class="p-2 rounded bg-gray-700 text-white">
-        <option value="">Selecciona estado de ánimo</option>
-        <option value="feliz">Feliz</option>
-        <option value="aburrido">Aburrido</option>
-        <option value="motivado">Motivado</option>
-        <option value="pensativo">Pensativo</option>
-        <option value="valiente">Valiente</option>
-        <option value="curioso">Curioso</option>
-      </select>
+      <div id="chat" class="flex flex-col h-80 overflow-y-auto bg-gray-800 p-4 rounded-lg mb-4"></div>
 
-      <button type="submit" class="bg-blue-600 hover:bg-blue-700 p-2 rounded text-white font-semibold">
-        Obtener recomendación 🎥
-      </button>
-    </form>
+      <form id="formulario" class="flex flex-col space-y-2">
+        <select id="tipo" class="p-2 rounded bg-gray-700 text-white">
+          <option value="">Selecciona tipo</option>
+          <option value="pelicula">Película</option>
+          <option value="serie">Serie</option>
+        </select>
+
+        <select id="genero" class="p-2 rounded bg-gray-700 text-white">
+          <option value="">Selecciona género</option>
+        </select>
+
+        <select id="estado_animo" class="p-2 rounded bg-gray-700 text-white">
+          <option value="">Selecciona estado de ánimo</option>
+          <option value="feliz">Feliz</option>
+          <option value="aburrido">Aburrido</option>
+          <option value="motivado">Motivado</option>
+          <option value="pensativo">Pensativo</option>
+          <option value="valiente">Valiente</option>
+          <option value="curioso">Curioso</option>
+        </select>
+
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 p-2 rounded text-white font-semibold">
+          Obtener recomendación 🎥
+        </button>
+      </form>
+    </div>
   </div>
 
   <script>
+    // --- CHAT LIBRE PROFESIONAL ---
+    const chatLibre = document.getElementById("chat-libre");
+    const inputMensaje = document.getElementById("mensaje");
+    const btnEnviar = document.getElementById("enviar");
+
+    btnEnviar.addEventListener("click", async () => {
+      const mensaje = inputMensaje.value.trim();
+      if (!mensaje) return;
+
+      chatLibre.innerHTML += `<div class='chat-bubble user'>👤 ${mensaje}</div>`;
+      inputMensaje.value = "";
+
+      const res = await fetch("/mensaje", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mensaje })
+      });
+
+      const data = await res.json();
+
+      let respuesta = `<div class='chat-bubble bot'>${data.respuesta}`;
+      if(data.peliculas && data.peliculas.length > 0){
+          respuesta += "<ul>";
+          data.peliculas.forEach(p => {
+              respuesta += `<li>🍿 <b>${p.titulo}</b> (${p.tipo} - ${p.genero} - ${p.año})</li>`;
+          });
+          respuesta += "</ul>";
+      }
+      respuesta += "</div>";
+
+      chatLibre.innerHTML += respuesta;
+      chatLibre.scrollTop = chatLibre.scrollHeight;
+    });
+
+    // --- CHAT DE RECOMENDACIONES ---
     const form = document.getElementById("formulario");
     const chat = document.getElementById("chat");
     const tipoSelect = document.getElementById("tipo");
@@ -95,7 +146,7 @@
 
       const data = await res.json();
 
-      let respuesta = `<div class='chat-bubble bot'>🎬✨ Aquí tienes recomendaciones para ver el día de hoy ✨🎬<ul>`;
+      let respuesta = `<div class='chat-bubble bot'>${data.respuesta}<ul>`;
       data.peliculas.forEach(p => {
         respuesta += `<li>🍿 <b>${p.titulo}</b> (${p.tipo} - ${p.genero} - ${p.año})</li>`;
       });
